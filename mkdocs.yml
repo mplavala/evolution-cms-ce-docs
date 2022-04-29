@@ -1,0 +1,22 @@
+site_name: Evolution CMS CE Docs
+site_url: https://docs.evo-cms.com/
+repo_url: https://github.com/evocms-community/docs
+
+docs_dir: 'en'
+
+theme:
+    name: readthedocs
+    include_hompage_in_sidebar: False
+    prev_next_buttons_location: "both"
+    navigation_depth: 4
+    collapse_navigation: False
+    titles_only: True
+    sticky_navigation: False
+    locale: "en"
+    highlightjs: true
+    hljs_languages:
+        - php
+
+plugins:
+    - search
+
