@@ -5,18 +5,16 @@ repo_url: https://github.com/evocms-community/docs
 docs_dir: 'en'
 
 theme:
-    name: readthedocs
-    include_hompage_in_sidebar: False
-    prev_next_buttons_location: "both"
-    navigation_depth: 4
-    collapse_navigation: False
-    titles_only: True
-    sticky_navigation: False
-    locale: "en"
-    highlightjs: true
-    hljs_languages:
-        - php
+    name: null
+    custom_dir: 'theme/'
+
+nav:
+    - 'General Information': '01_General information/'
+    - 'For Users': '02_For_users/'
+    - 'Tutorials': '05_Tutorials/'
+    - 'Extras': '04_Extras/'
+    - 'Developers': '03_Developers/'
 
 plugins:
     - search
-
+    - include_dir_to_nav

@@ -1,3 +1,6 @@
+.git/
+.gitignore
 
-.idea/
-.idea/vcs.xml
+notes.txt
+
+template-files/

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+	<link rel="icon" type="image/ico" href="{{ "img/favicon.ico"|url }}" />
+	<link href="{{ "css/style.css"|url }}" rel="stylesheet" type="text/css">
+	{% for path in config.extra_css %}
+	<link href="{{ path|url }}" rel="stylesheet">
+	{% endfor %}
+	{% block extrahead %}
+	{% endblock %}
+</head>
+
+<body>
+	<div class="wrapper">
+		<section class="content-wrap">
+			<header class="header">
+				<div class="row">
+					<div class="logo"><img src="{{ "img/logo.png"|url }}" alt="Evolution CMS"></div>
+					<div class="search" role="search">
+						<form action="{{ "search.html"|url }}" method="get">
+							<input type="text" name="q" placeholder="Search docs">
+						</form>
+					</div>
+					<div class="github"><a target="_blank" href="https://github.com/evocms-community/docs"><i class="bx bxl-github"></i></a></div>
+				</div>
+			</header>
+			<div class="content">
+				<div class="bread">
+					<div class="row">
+						<!-- breadcrumb here -->
+						<ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
+							<li><a href="/">Docs</a></li>
+							<li><a href="#">Bread</a></li>
+							<li><a href="#">Crumbs</a></li>
+							<li>Here</li>
+						</ul>
+						<!-- end breadcrumb here -->
+					</div>
+				</div>
+				<div class="row space">
+					{{ page.content }}
+					<footer class="footer">
+						<div class="footer-buttons" role="navigation" aria-label="footer navigation">
+							{% if page.previous_page %}
+							<a href="{{ page.previous_page.url|url }}" class="btn"><i class='bx bx-chevron-left'></i> Previous</a>
+							{% endif %}
+							{% if page.next_page %}
+							<a href="{{ page.next_page.url|url }}" class="btn float-right">Next <i class='bx bx-chevron-right'></i></a>
+							{% endif %}
+						</div>
+					</footer>
+				</div>
+			</div>
+		</section>
+		<nav class="side-panel">
+			<div class="nav-trigger"><i class="bx bx-menu"></i></div>
+			<h3><i class='bx bx-file'></i> Documentation</h3>
+			<ul class="menu">
+				{% for nav_item in nav %}
+				{% include "nav.html" %}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+	<div class="preloader-wrapper">
+		<div class="preload">
+			<div class="spin">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.2/css/boxicons.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		// preloader
+		$(document).ready(function($) {
+			var body = $('body');
+			body.addClass('preloader');
+		});
+		$(window).on('load', function() {
+			$('.preloader-wrapper').delay(200).fadeOut(600);
+			$('body').removeClass('preloader');
+		});
+		// nav trigger
+		$('.nav-trigger').on('click', function(e) {
+			//e.preventDefault();
+			$('body').toggleClass('open');
+			$('.nav-trigger').toggleClass('open');
+		});
+		// accordion : https://codepen.io/ahmadbassamemran/pen/BPbVPe
+		const list = document.querySelectorAll('.list');
+
+		function accordion(e) {
+			e.stopPropagation();
+			if (this.classList.contains('active')) {
+				this.classList.remove('active');
+			} else if (this.parentElement.parentElement.classList.contains('active')) {
+				this.classList.add('active');
+			} else {
+				for (i = 0; i < list.length; i++) {
+					list[i].classList.remove('active');
+				}
+				this.classList.add('active');
+			}
+		}
+		for (i = 0; i < list.length; i++) {
+			list[i].addEventListener('click', accordion);
+		}
+	</script>
+	{% for path in config.extra_javascript %}
+	<script src="{{ path|url }}"></script>
+	{% endfor %}
+</body>
+
+</html>
