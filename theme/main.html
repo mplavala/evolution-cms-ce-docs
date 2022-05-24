@@ -5,14 +5,20 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+	<title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+	{%- if page and page.canonical_url %}
+	<link rel="canonical" href="{{ page.canonical_url }}" />{%- endif %}
 	<link rel="icon" type="image/ico" href="{{ "img/favicon.ico"|url }}" />
 	<link href="{{ "css/style.css"|url }}" rel="stylesheet" type="text/css">
+	<!-- extra CSS -->
 	{% for path in config.extra_css %}
 	<link href="{{ path|url }}" rel="stylesheet">
 	{% endfor %}
+	<!-- end extra CSS -->
+	<!-- extrahead -->
 	{% block extrahead %}
 	{% endblock %}
+	<!-- endextrahed -->
 </head>
 
 <body>
@@ -21,29 +27,37 @@
 			<header class="header">
 				<div class="row">
 					<div class="logo"><img src="{{ "img/logo.png"|url }}" alt="Evolution CMS"></div>
+					{% if 'search' in config['plugins'] %}
 					<div class="search" role="search">
 						<form action="{{ "search.html"|url }}" method="get">
-							<input type="text" name="q" placeholder="Search docs">
+							<input type="text" name="q" placeholder="Search docs" id="mkdocs-search-query">
 						</form>
 					</div>
+					{%- endif %}
 					<div class="github"><a target="_blank" href="https://github.com/evocms-community/docs"><i class="bx bxl-github"></i></a></div>
 				</div>
 			</header>
 			<div class="content">
 				<div class="bread">
 					<div class="row">
-						<!-- breadcrumb here -->
+						<!-- breadcrumbs -->
+						<!--
 						<ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
 							<li><a href="/">Docs</a></li>
 							<li><a href="#">Bread</a></li>
 							<li><a href="#">Crumbs</a></li>
 							<li>Here</li>
 						</ul>
-						<!-- end breadcrumb here -->
+						-->
+						<!-- end breadcrumbs -->
 					</div>
 				</div>
 				<div class="row space">
+					<!-- page.content -->
+					{% block content %}
 					{{ page.content }}
+					{% endblock %}
+					<!-- end page.content -->
 					<footer class="footer">
 						<div class="footer-buttons" role="navigation" aria-label="footer navigation">
 							{% if page.previous_page %}
@@ -61,34 +75,17 @@
 			<div class="nav-trigger"><i class="bx bx-menu"></i></div>
 			<h3><i class='bx bx-file'></i> Documentation</h3>
 			<ul class="menu">
+				<!-- nav -->
 				{% for nav_item in nav %}
 				{% include "nav.html" %}
 				{% endfor %}
+				<!-- end nav -->
 			</ul>
 		</nav>
-	</div>
-	<div class="preloader-wrapper">
-		<div class="preload">
-			<div class="spin">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-		</div>
 	</div>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.2/css/boxicons.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
-		// preloader
-		$(document).ready(function($) {
-			var body = $('body');
-			body.addClass('preloader');
-		});
-		$(window).on('load', function() {
-			$('.preloader-wrapper').delay(200).fadeOut(600);
-			$('body').removeClass('preloader');
-		});
 		// nav trigger
 		$('.nav-trigger').on('click', function(e) {
 			//e.preventDefault();
@@ -115,9 +112,11 @@
 			list[i].addEventListener('click', accordion);
 		}
 	</script>
+	<!-- extra JS -->
 	{% for path in config.extra_javascript %}
 	<script src="{{ path|url }}"></script>
 	{% endfor %}
+	<!-- end extra JS -->
 </body>
 
 </html>
