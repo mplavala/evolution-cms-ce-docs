@@ -33,25 +33,32 @@
 							<input type="text" name="q" placeholder="Search docs" id="mkdocs-search-query">
 						</form>
 					</div>
-					{%- endif %}
+					{% endif %}
 					<div class="github"><a target="_blank" href="https://github.com/evocms-community/docs"><i class="bx bxl-github"></i></a></div>
 				</div>
 			</header>
 			<div class="content">
+				<!-- breadcrumbs -->
+				{% if page %}
 				<div class="bread">
 					<div class="row">
-						<!-- breadcrumbs -->
-						<!--
 						<ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
-							<li><a href="/">Docs</a></li>
-							<li><a href="#">Bread</a></li>
-							<li><a href="#">Crumbs</a></li>
-							<li>Here</li>
+							{% if not page.is_homepage %}
+							<li>Evolution CMS documentation</li>
+							{% endif %}
+							{% for doc in page.ancestors[::-1] %}
+							{% if doc.link %}
+							<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+							{% else %}
+							<li>{{ doc.title }}</li>
+							{% endif %}
+							{% endfor %}
+							<li>{{ page.title }}</li>
 						</ul>
-						-->
-						<!-- end breadcrumbs -->
 					</div>
 				</div>
+				{% endif %}
+				<!-- end breadcrumbs -->
 				<div class="row space">
 					<!-- page.content -->
 					{% block content %}
