@@ -96,31 +96,15 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.2/css/boxicons.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
+		// nav list
+		$('.list i').on('click', function(e) {
+			$(this).parent().toggleClass('active');
+		});
 		// nav trigger
 		$('.nav-trigger').on('click', function(e) {
-			//e.preventDefault();
 			$('body').toggleClass('open');
 			$('.nav-trigger').toggleClass('open');
 		});
-		// accordion : https://codepen.io/ahmadbassamemran/pen/BPbVPe
-		const list = document.querySelectorAll('.list');
-
-		function accordion(e) {
-			e.stopPropagation();
-			if (this.classList.contains('active')) {
-				this.classList.remove('active');
-			} else if (this.parentElement.parentElement.classList.contains('active')) {
-				this.classList.add('active');
-			} else {
-				for (i = 0; i < list.length; i++) {
-					list[i].classList.remove('active');
-				}
-				this.classList.add('active');
-			}
-		}
-		for (i = 0; i < list.length; i++) {
-			list[i].addEventListener('click', accordion);
-		}
 	</script>
 	<!-- extra JS -->
 	{% for path in config.extra_javascript %}

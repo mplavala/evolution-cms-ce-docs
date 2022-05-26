@@ -1,10 +1,23 @@
 {% if not nav_item.children %}
-<li {% if nav_item.active %}class="active"{% endif %}>
+{% if nav_item.title != "Index" %}
+<li {% if nav_item.active %}class="active" {% endif %}>
   <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
 </li>
+{% endif %}
 {% else %}
-<li {% if nav_item.active %}class="active list"{% else %}class="list"{% endif %}>
-  <a href="javascript:void();">{{ nav_item.title }}</a>
+<li {% if nav_item.active %}class="active list" {% else %}class="list" {% endif %}>
+  <i class='bx bx-chevron-right'></i>
+  {% set ns = namespace(index_page = false) %}
+  {% for doc in nav_item.children %}
+  {% if doc.title == "Index" %}
+  {% set ns.index_page = doc %}
+  {% endif %}
+  {% endfor %}
+  {% if ns.index_page is not false %}
+  <a href="{{ ns.index_page.url|url }}">{{ nav_item.title }}</a>
+  {% else %}
+  <a>{{ nav_item.title }}</a>
+  {% endif %}
   <ul class="items">
     {% for nav_item in nav_item.children %}
     {% include "nav.html" %}
