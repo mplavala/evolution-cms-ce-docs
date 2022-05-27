@@ -147,6 +147,7 @@ Possible sources:
 
 - array: json or php array, its values are defined by the parameter named "defaults";
 - param:parameter name:prefix - the same as the "array" source but you can specify any snippet parameter, not only "defaults";
+- get:array keys, comma separated:prefix - loads data from $_GET according to the given keys, the values can be arrays;
 - session:array keys, comma separated:prefix - loads data from $_SESSION according to the given keys, the values can be arrays;
 - plh:keys, comma separated:prefix - loads data from $modx->placeholders property according to the given keys, the values can be arrays;
 - cookie:keys, comma separated:префикс - loads data from the $_COOKIE array according to the given keys, the values can be json-arrays;
