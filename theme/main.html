@@ -5,22 +5,21 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-	{%- if page and page.canonical_url %}
-	<link rel="canonical" href="{{ page.canonical_url }}" />{%- endif %}
+	<title>{% if page and page.title and not page.is_homepage %}{% if page.title != "Index" %}{{ page.title }} - {% else %}{{ page.ancestors[0].title }} - {% endif %}{% endif %}{{ config.site_name }}</title>
+	{%- if page and page.canonical_url -%}<link rel="canonical" href="{{ page.canonical_url }}">{%- endif -%}
 	<link rel="icon" type="image/ico" href="{{ "img/favicon.png"|url }}" />
 	<link href="{{ "css/style.css"|url }}" rel="stylesheet" type="text/css">
 	<!-- extra CSS -->
-	{% for path in config.extra_css %}
+	{%- for path in config.extra_css %}
 	<link href="{{ path|url }}" rel="stylesheet">
-	{% endfor %}
+	{%- endfor %}
 	<!-- end extra CSS -->
 	<!-- extrahead -->
-	{% block extrahead %}
+	{%- block extrahead %}
 	<script>
 		var base_url = '{{ base_url }}';
 	</script>
-	{% endblock %}
+	{%- endblock %}
 	<!-- endextrahed -->
 </head>
 
@@ -30,52 +29,48 @@
 			<header class="header">
 				<div class="row">
 					<div class="logo"><img src="{{ "img/logo.png"|url }}" alt="Evolution CMS"></div>
-					{% if 'search' in config['plugins'] %}
+					{%- if 'search' in config['plugins'] %}
 					<div class="search" role="search">
 						<form action="{{ "search.html"|url }}" method="get">
 							<input type="text" name="q" placeholder="Search docs" id="mkdocs-search-query">
 						</form>
 					</div>
-					{% endif %}
+					{%- endif %}
 					<div class="github"><a target="_blank" href="https://github.com/evocms-community/docs"><i class="bx bxl-github"></i></a></div>
 				</div>
 			</header>
 			<div class="content">
 				<!-- breadcrumbs -->
-				{% if page %}
+				{%- if page and not page.is_homepage %}
 				<div class="bread">
 					<div class="row">
 						<ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
-							{% if not page.is_homepage %}
-							<li>Evolution CMS documentation</li>
-							{% endif %}
-							{% for doc in page.ancestors[::-1] %}
-							{% if doc.link %}
-							<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
-							{% else %}
+							<li><i class='bx bxs-home'></i></li>
+							{%- for doc in page.ancestors[::-1] %}
 							<li>{{ doc.title }}</li>
-							{% endif %}
-							{% endfor %}
+							{%- endfor -%}
+							{% if page.title != "Index" %}
 							<li>{{ page.title }}</li>
+							{%- endif %}
 						</ul>
 					</div>
 				</div>
-				{% endif %}
+				{%- endif %}
 				<!-- end breadcrumbs -->
 				<div class="row space">
 					<!-- page.content -->
-					{% block content %}
+					{%- block content %}
 					{{ page.content }}
-					{% endblock %}
+					{%- endblock %}
 					<!-- end page.content -->
 					<footer class="footer">
 						<div class="footer-buttons" role="navigation" aria-label="footer navigation">
-							{% if page.previous_page %}
+							{%- if page.previous_page %}
 							<a href="{{ page.previous_page.url|url }}" class="btn"><i class='bx bx-chevron-left'></i> Previous</a>
-							{% endif %}
-							{% if page.next_page %}
+							{%- endif %}
+							{%- if page.next_page %}
 							<a href="{{ page.next_page.url|url }}" class="btn float-right">Next <i class='bx bx-chevron-right'></i></a>
-							{% endif %}
+							{%- endif %}
 						</div>
 					</footer>
 				</div>
@@ -86,9 +81,9 @@
 			<h3><i class='bx bx-file'></i> Documentation</h3>
 			<ul class="menu">
 				<!-- nav -->
-				{% for nav_item in nav %}
-				{% include "nav.html" %}
-				{% endfor %}
+				{%- for nav_item in nav %}
+				{%- include "nav.html" %}
+				{%- endfor %}
 				<!-- end nav -->
 			</ul>
 		</nav>
@@ -97,7 +92,8 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
 		// nav list
-		$('.list i').on('click', function(e) {
+		$('.list i, .list .nav-folder').on('click', function(e) {
+			e.preventDefault();
 			$(this).parent().toggleClass('active');
 		});
 		// nav trigger
@@ -107,9 +103,9 @@
 		});
 	</script>
 	<!-- extra JS -->
-	{% for path in config.extra_javascript %}
+	{%- for path in config.extra_javascript %}
 	<script src="{{ path|url }}"></script>
-	{% endfor %}
+	{%- endfor %}
 	<!-- end extra JS -->
 </body>
 
