@@ -1,6 +1,7 @@
 site_name: Evolution CMS CE Docs
 site_url: https://docs.evo-cms.com/en/latest/
 repo_url: https://github.com/evocms-community/docs
+edit_uri: blob/master/en
 
 docs_dir: 'en'
 
