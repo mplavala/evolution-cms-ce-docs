@@ -12,13 +12,63 @@ theme:
     static_templates:
       - 404.html
 
-nav:
-    - 'General Information': '01_General information/'
-    - 'For Users': '02_For_users/'
-    - 'Tutorials': '05_Tutorials/'
-    - 'Extras': '04_Extras/'
-    - 'Developers': '03_Developers/'
-
 plugins:
     - search
     - include_dir_to_nav
+
+nav:
+    - 'General Information':
+      - '01_General information/index.md'
+      - 'More about Evolution CMS':
+        - '01_General information/10_More_about_Evolution_CMS/index.md'
+        - 'Website management in Evolution CMS': '01_General information/10_More_about_Evolution_CMS/01_Website_management_in_Evolution.md'
+        - 'SEO in Evolution CMS': '01_General information/10_More_about_Evolution_CMS/02_SEO_in_Evolution.md'
+        - 'Hosting requirements': '01_General information/10_More_about_Evolution_CMS/05_Hosting_requirements.md'
+        - 'GNU GPLv3': '01_General information/10_More_about_Evolution_CMS/04_Unofficial_translation_GNU_GPLv3.md'
+    - 'For Users':
+      - '02_For_users/index.md'
+      - 'Terminology': '02_For_users/01_Terminology.md'
+      - 'Site Management':
+        - '02_For_users/01_Site management/index.md'
+        - 'Admin users':
+          - '02_For_users/01_Site management/10_Admin_Users/index.md'
+          - 'Admin roles and groups': '02_For_users/01_Site management/10_Admin_Users/10_Admin_Roles_And_Groups.md'
+          - 'Reset your password/unblock your user': '02_For_users/01_Site management/10_Admin_Users/20_Reset_your_Password_-_Unblock_your_User.md'
+          - 'Why admin users, roles and groups': '02_For_users/01_Site management/10_Admin_Users/30_Why_Admin_Users,_Roles_and_Groups.md'
+        - 'Firendly URL Solutions': '02_For_users/01_Site management/20_Friendly_URL_Solutions.md'
+        - 'Moving site': '02_For_users/01_Site management/30_Moving_Site.md'
+        - 'Taking site down for maintenance': '02_For_users/01_Site management/40_Taking_sites_down_for_maintenance.md'
+        - 'Upgrading': '02_For_users/01_Site management/50_Upgrading.md'
+        - 'Web Users':
+          - '02_For_users/01_Site management/60_Web_Users/index.md'
+          - 'Creating a web user': '02_For_users/01_Site management/60_Web_Users/10_Creating_a_Web_User.md'
+          - 'Web user groups and document groups': '02_For_users/01_Site management/60_Web_Users/20_Web_User_Groups_and_Document_Groups.md'
+          - 'Why web users and groups': '02_For_users/01_Site management/60_Web_Users/30_Why_Web_Users_and_Groups.md'
+      - 'Content Editing':
+        - '02_For_users/02_ContentEditing/index.md'
+        - 'Terminology': '02_For_users/02_ContentEditing/01_Terminology.md'
+        - 'Resources':
+          - 'Creating a resource': '02_For_users/02_ContentEditing/10_Resources/10_Creating_a_Resource.md'
+          - 'Edit a resource': '02_For_users/02_ContentEditing/10_Resources/20_Edit_a_Resource.md'
+          - 'Publishing a resource': '02_For_users/02_ContentEditing/10_Resources/30_Publishing_a_Resource.md'
+          - 'Move a resource': '02_For_users/02_ContentEditing/10_Resources/40_Move_a_Resource.md'
+          - 'Select a template': '02_For_users/02_ContentEditing/10_Resources/50_Select_a_Template.md'
+          - 'Caching': '02_For_users/02_ContentEditing/10_Resources/60_Caching.md'
+        - 'Tags':
+          - '02_For_users/02_ContentEditing/20_Tags/index.md'
+          - 'Document variables': '02_For_users/02_ContentEditing/20_Tags/10_Document_Variables.md'
+      - 'Designing':
+        - '02_For_users/03_Designing/index.md'
+        - 'What is a template': '02_For_users/03_Designing/01_What_is_a_template.md'
+        - 'What is a chunk': '02_For_users/03_Designing/02_What_Is_A_Chunk.md'
+        - 'What are template variables': '02_For_users/03_Designing/03_What_are_Template_Variables.md'
+        - 'Adding chunks': '02_For_users/03_Designing/10_Adding_Chunks.md'
+        - 'Adding snippets': '02_For_users/03_Designing/30_Adding_Snippets.md'
+      - 'Cheat sheet': '02_For_users/10_Cheat_Sheet.md'
+    - 'Developers': '03_Developers/'
+    - 'Extras': '04_Extras/'
+    - 'Tutorials':
+      - '05_Tutorials/index.md'
+      - 'Lessons': '05_Tutorials/01_Lessons/'
+      - 'Solutions': '05_Tutorials/02_Solutions/'
+      - 'Links': '05_Tutorials/03_Links/'
