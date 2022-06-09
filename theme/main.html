@@ -28,7 +28,9 @@
 		<section class="content-wrap">
 			<header class="header">
 				<div class="row">
-					<div class="logo"><img src="{{ "img/logo.png"|url }}" alt="Evolution CMS"></div>
+					<div class="logo">
+						<a href="{{ ""|url }}"><img src="{{ "img/logo.png"|url }}" alt="Evolution CMS"></a>
+					</div>
 					{%- if 'search' in config['plugins'] %}
 					<div class="search" role="search">
 						<form action="{{ "search.html"|url }}" method="get">
