@@ -118,7 +118,7 @@ ul.menu .list i{transition:.2s;}
 ul.menu .list i:hover,
 ul.menu .list.active > i{transform:rotate(90deg);}
 
-ul.menu .active > .items{display:block; padding-top:10px; padding-bottom:10px; background:rgba(0,0,0,0.2); height:auto; color:#fff; transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1); transition:all 200ms; clear: both; float:left; width:100%;}
+ul.menu .active > .items{display:block; padding-top:10px; padding-bottom:10px; background:rgba(0,0,0,0.2); height:auto; color:#fff; transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1); transition:all 200ms; clear:both; width:100%;}
 ul.menu .active > .items li{padding:0; border-bottom:1px solid rgba(255,255,255,0.05); list-style:none;}
 ul.menu .active > .items li:last-child{border-color:transparent; padding-bottom:0;}
 ul.menu .active > .items .active > .items{background-color:rgba(255,255,255,0.05);}
