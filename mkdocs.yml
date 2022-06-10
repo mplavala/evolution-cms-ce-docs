@@ -24,7 +24,7 @@ nav:
         - 'Website management in Evolution CMS': '01_General information/10_More_about_Evolution_CMS/01_Website_management_in_Evolution.md'
         - 'SEO in Evolution CMS': '01_General information/10_More_about_Evolution_CMS/02_SEO_in_Evolution.md'
         - 'Hosting requirements': '01_General information/10_More_about_Evolution_CMS/05_Hosting_requirements.md'
-        - 'GNU GPLv3': '01_General information/10_More_about_Evolution_CMS/04_Unofficial_translation_GNU_GPLv3.md'
+        - 'GNU GPLv3': '01_General information/10_More_about_Evolution_CMS/04_GNU_GPLv3.md'
     - 'For Users':
       - '02_For_users/index.md'
       - 'Terminology': '02_For_users/01_Terminology.md'
