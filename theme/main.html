@@ -6,7 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% if page and page.title and not page.is_homepage %}{% if page.title != "Index" %}{{ page.title }} - {% else %}{{ page.ancestors[0].title }} - {% endif %}{% endif %}{{ config.site_name }}</title>
-	{% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+	{% if page and page.canonical_url %}
+	<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
 	<link rel="icon" type="image/ico" href="{{ "img/favicon.png"|url }}" />
 	<link href="{{ "css/style.css"|url }}" rel="stylesheet" type="text/css">
 	<!-- extra CSS -->
@@ -49,7 +50,7 @@
 						<ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
 							<li><a href="{{ ""|url }}"><i class='bx bxs-home'></i></a></li>
 							{%- for breadcrumb_item in page.ancestors[::-1] %}
-								{% include "breadcrumb_item.html" %}
+							{% include "breadcrumb_item.html" %}
 							{%- endfor -%}
 							{% if page.title != "Index" %}
 							<li>{{ page.title }}</li>
@@ -102,6 +103,16 @@
 		$('.nav-trigger').on('click', function(e) {
 			$('body').toggleClass('open');
 			$('.nav-trigger').toggleClass('open');
+		});
+		// nav scroll position memorize
+		$( document ).ready(function() {
+			let topNavScroll = sessionStorage.getItem("nav-sidepanel-scroll");
+			if (topNavScroll !== null) {
+				$('nav.side-panel').scrollTop(parseInt(topNavScroll, 10));
+			}
+		});
+		$(window).on('beforeunload', function() {
+			sessionStorage.setItem("nav-sidepanel-scroll", $('nav.side-panel').scrollTop());
 		});
 	</script>
 	<!-- extra JS -->
