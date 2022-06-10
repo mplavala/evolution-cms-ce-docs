@@ -47,9 +47,9 @@
 				<div class="bread">
 					<div class="row">
 						<ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
-							<li><i class='bx bxs-home'></i></li>
-							{%- for doc in page.ancestors[::-1] %}
-							<li>{{ doc.title }}</li>
+							<li><a href="{{ ""|url }}"><i class='bx bxs-home'></i></a></li>
+							{%- for breadcrumb_item in page.ancestors[::-1] %}
+								{% include "breadcrumb_item.html" %}
 							{%- endfor -%}
 							{% if page.title != "Index" %}
 							<li>{{ page.title }}</li>

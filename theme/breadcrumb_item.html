@@ -1,0 +1,21 @@
+{%- set ns = namespace(index_page = false, is_parent = false) -%}
+
+{%- for doc in breadcrumb_item.children -%}
+  {%- if doc.title == "Index" -%}
+    {%- set ns.index_page = doc -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if page.title == "Index" -%}
+  {%- for doc in breadcrumb_item.children -%}
+    {%- if doc == page -%}
+      {%- set ns.is_parent = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if (ns.index_page is not false) and (not ns.is_parent) %}
+  <li><a href="{{ ns.index_page.url|url }}">{{ breadcrumb_item.title }}</a></li>
+{%- else %}
+  <li>{{ breadcrumb_item.title }}</li>
+{%- endif %}
