@@ -1,9 +1,9 @@
 Evolution is a functional, extensible and user-friendly site development system (CMF), as well as a user-friendly management system (CMS). This engine is a new generation, which was originally designed to create Web 2.0 generation projects
 
 ## Key Features ##
-- intuitive control system interface
+- intuitive interface
 - simple template language
-- full control of HTML-code, allowing to implement any design
+- full control of HTML-code, allowing to implement any design and technical requirements
 - convenient document tree
 - integrated mechanism for working with ajax
 - built-in NC support (SEF)
@@ -14,7 +14,7 @@ Evolution is a functional, extensible and user-friendly site development system 
 - effective work with documents
 - publication and cancellation of the publication of the document, including automation at the specified time
 - support for different types of documents (MIME)
-- creation of additional parameters of various types (text box, checkboxes, drop-down list, etc.)
+- creation of additional temaplate variables (TVs) - additional parameters/content fields of various types (text box, checkboxes, drop-down list, etc.)
 - integrated SEO engine (keyword and meta tag management)
 - excellent extensibility (with the help of snippets, plug-ins and modules)
 
@@ -32,7 +32,7 @@ Evolution is a functional, extensible and user-friendly site development system 
 
 A large number of ready-made add-ons are available on our website and the official repository.
 
-## License ## 
+## License ##
 
 Evolution CMS is distributed under the GNU / GPL license, which makes it possible to use this CMS for free without any restrictions and makes it possible to work with open source.
 
