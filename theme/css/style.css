@@ -56,10 +56,10 @@ h4{font-size:17px; line-height:24px; padding:20px 0 2px; margin-bottom:10px;}
 
 /* breadcrumbs */
 .bread{padding:4px 0 5px; background:#eee; font-size:90%;}
-.breadcrumb{line-height:30px; position:relative;}
+.breadcrumb{line-height:30px; position:relative; padding-left:0!important;}
 .breadcrumb{display:inline; margin:0; padding:0;}
 .breadcrumb li{display:inline-block; position:relative;}
-.breadcrumb a{color:var(--color4); margin:0; padding:0; text-decoration:none;}
+.breadcrumb a{color:var(--color1); margin:0; padding:0; text-decoration:none;}
 .breadcrumb a:hover{text-decoration:underline;}
 .breadcrumb li:before{font-family:'boxicons'; content:"\ed3b"; margin:0 5px 0 2px; color:#888; position:relative; top:1px; font-size:11px;}
 .breadcrumb li:first-of-type:before{content:""; margin:0;}
