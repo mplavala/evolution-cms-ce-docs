@@ -73,7 +73,8 @@ body.open .content-wrap{margin-left:40px;}
 .content ol li{list-style:decimal; margin-left:20px;}
 
 pre{background:#f4f4f4; border:1px solid #ddd; border-left:2px solid var(--color4); color:#666; page-break-inside:avoid; line-height:inherit; margin:10px 0 15px; max-width:100%; overflow:auto; padding:1em 1.5em; display:block; word-wrap:break-word;}
-pre,code{font-family:monospace; font-size:14px;}
+pre, 
+code{font-family:monospace; font-size:14px;}
 
 table{border-collapse:collapse; margin:25px 0; font-size:inherit; font-family:inherit; min-width:300px; border:1px solid #ddd;}
 table thead tr{background-color:var(--color4); color:#ffffff; text-align:left;}
