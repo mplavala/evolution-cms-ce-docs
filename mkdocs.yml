@@ -65,7 +65,57 @@ nav:
         - 'Adding chunks': '02_For_users/03_Designing/10_Adding_Chunks.md'
         - 'Adding snippets': '02_For_users/03_Designing/30_Adding_Snippets.md'
       - 'Cheat sheet': '02_For_users/10_Cheat_Sheet.md'
-    - 'Developers': '03_Developers/'
+    - 'Developers':
+      -  '03_Developers/index.md'
+      - 'Instalation': '03_Developers/01_Installation/index.md'
+      - 'Elements':
+        - '03_Developers/02_Elements/index.md'
+        - 'Templates': '03_Developers/02_Elements/01_Template.md'
+        - 'Chunks': '03_Developers/02_Elements/02_Chunks.md'
+        - 'Snippets': '03_Developers/02_Elements/03_Snippets.md'
+        - 'Plugins':
+          - '03_Developers/02_Elements/04_Plugins/index.md'
+          - 'Plugin events': '03_Developers/02_Elements/04_Plugins/02_Plugin_events.md'
+        - 'Modules':
+          - '03_Developers/02_Elements/05_Modules/index.md'
+          - 'Create and run module from Admin interface': '03_Developers/02_Elements/05_Modules/10_How_to_create_and_run_a_module_from_within_the_Admin_Interface.md'
+          - 'Managing module dependencies': '03_Developers/02_Elements/05_Modules/20_Managing_module_dependencies.md'
+          - 'Setting up configuration parameters': '03_Developers/02_Elements/05_Modules/30_Setting_up_configuration_parameters.md'
+          - 'Writing the module code': '03_Developers/02_Elements/05_Modules/40_Writing_the_module_code.md'
+        - 'Template variables':
+          - '03_Developers/02_Elements/06_Template_Variables/index.md'
+          - 'Basic parameters': '03_Developers/02_Elements/06_Template_Variables/01_Basic_Parameters.md'
+          - 'System settings': '03_Developers/02_Elements/06_Template_Variables/02_System_Settings.md'
+          - '@ Bindings':
+            - '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/index.md'
+            - '@ CHUNK': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/20_@_CHUNK.md'
+            - '@ DIRECTORY': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/30_@_DIRECTORY.md'
+            - '@ DOCUMENT': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/40_@_DOCUMENT.md'
+            - '@ EVAL': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/50_@_EVAL.md'
+            - '@ FILE': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/60_@_FILE.md'
+            - '@ INHERIT': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/70_@_INHERIT.md'
+            - '@ SELECT': '03_Developers/02_Elements/06_Template_Variables/10_@_Bindings/80_@_SELECT.md'
+          - 'Creating template variable': '03_Developers/02_Elements/06_Template_Variables/20_Creating_a_Template_Variable.md'
+          - 'What are template variables': '03_Developers/02_Elements/06_Template_Variables/30_What_are_Template_Variables.md'
+          - 'Widgets':
+            - '03_Developers/02_Elements/06_Template_Variables/40_Widgets/index.md'
+            - 'What are widgets': '03_Developers/02_Elements/06_Template_Variables/40_Widgets/10_What_are_Widgets.md'
+            - 'DataGrid widget': '03_Developers/02_Elements/06_Template_Variables/40_Widgets/20_DataGrid_Widget.md'
+            - 'Hyperlink widget': '03_Developers/02_Elements/06_Template_Variables/40_Widgets/30_Hyperlink_Widget.md'
+            - 'Miscellaneous widget': '03_Developers/02_Elements/06_Template_Variables/40_Widgets/40_Misc._Widget.md'
+            - 'RichTextBox widget': '03_Developers/02_Elements/06_Template_Variables/40_Widgets/50_RichTextBox_Widget.md'
+            - 'Viewport widget': '03_Developers/02_Elements/06_Template_Variables/40_Widgets/60_Viewport_Widget.md'
+        - 'Tags':
+          - '03_Developers/02_Elements/07_Tags/index.md'
+          - 'Resource fields': '03_Developers/02_Elements/07_Tags/10_Resource_Fields.md'
+        - 'Modifiers':
+          - '03_Developers/02_Elements/08_Modifiers/index.md'
+          - '@ Modifiers': '03_Developers/02_Elements/08_Modifiers/10_@_Modifiers.md'
+        - 'Predefined variables': '03_Developers/02_Elements/09_Predefined_variables.md'
+      - 'API': '03_Developers/03_API/'
+      - 'DBAPI': '03_Developers/04_DBAPI/'
+      - 'System Variables': '03_Developers/05_SystemVariables/'
+      - 'MMrules': '03_Developers/10_MMrules/'
     - 'Extras': '04_Extras/'
     - 'Tutorials':
       - '05_Tutorials/index.md'
