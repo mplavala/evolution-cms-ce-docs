@@ -94,6 +94,13 @@ $cart->getTotal();
 $cart->getItemsCount();
 ```
 
+#### has - проверить, есть ли товар с заданным id в корзине
+```php
+$cart->has($myProductId);
+```
+Вернет true, если товар с идентификатром $myProductId есть в корзине, иначе вернет false.
+
+
 #### getSubtotals - расчет подитогов и итоговой стоимости товаров в корзине
 ```php
 $cart->getSubtotals(array &$rows, &$total);
