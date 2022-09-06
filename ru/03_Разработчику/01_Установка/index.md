@@ -1,5 +1,5 @@
 <ul>
-<li><p>Загрузите <a href="https://github.com/evolution-cms/evolution/releases">последнюю версию системы</a>.</p>
+<li><p>Загрузите <a href="https://github.com/evocms-community/evolution/releases">последнюю версию системы</a>.</p>
 
 <li><p>Разархивируйте файлы в любую папку на вашем локальном диске.</p>
 
