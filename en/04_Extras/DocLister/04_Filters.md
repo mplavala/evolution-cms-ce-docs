@@ -6,7 +6,7 @@ The following filters are included:
 * tv - for filtering by TV-parameters;
 * tvd - to filter by TV-parameters taking into account the default values;
 * private - to filter documents taking into account access rights.
-* 
+
 # filter 
 ## Construction 
 #### Example
@@ -20,6 +20,16 @@ Equally.
 
 ### !=, no, isnot
 Not equal.
+NB: By design this creates a WHERE call which will include IS NULL.  This may produce undesired results when trying to filter for empty values.
+#### Example: 
+AND(tv:images:!=;)
+Would show all records.  Please use isnull
+
+### isnull
+empty records
+
+### isnotnull
+records containing something
 
 ### >, gt
 More than.
